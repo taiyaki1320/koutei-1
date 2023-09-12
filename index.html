@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コウテイシステム</title>
+    <link rel="stylesheet" href="css/home.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script type="text/javascript" src="storage.js"></script>
+</head>
+<body>
+        <!--絵を描くcanvasタグ-->
+	<canvas id = "canvas"></canvas>
+    
+    <div class="topspace"><section id="date">0000/00/00 曜</section></div>       <!--カレンダーを表示-->
+    <script type="text/javascript" src="date.js"></script><!--日付、泡の描画-->
+    
+    <div class="content">       <!--各コンテンツの親クラス-->
+        <img id="illust" onclick="slideshow()" src="https://3.bp.blogspot.com/-LD7eWXxJDWc/Wat2JYWIm1I/AAAAAAABGVY/QrzmfD7ayigOx65TyW0Y_UHTAKogQ_-KgCLcBGAs/s800/animal_stand_penguin.png" alt="キャラクター">
+        <div class="memoForm">  <!--記入フォーム-->
+            <p>今日関心を持った人<input type="text" id="title" class="form-control" placeholder="名前 or ○○な人などを記入しよう！" /></p>
+            <p>どう感じましたか？<input type="text" class="form-control"  placeholder="尊敬・憧れ・共感etc..." id="body"></p>
+            <p><div id="result">？</div></p>
+            
+            <div class="flex">
+            <div id="btn">明日はこんな人を探そう</div>
+            <div class="spbtn inactive" id ="spbtn">STOP</div>
+             </div>
+
+            <button type="button" class="btn btn-primary btn-block" id="btnAdd">追加</button>   <!--ローカルストレージに追加-->
+            <button type="button" class="btn btn-primary btn-block" id="btnReset">リセット</button> <!--ローカルストレージを削除-->
+        </div>
+
+        <li><div id="memoArea">
+        </div>       <!--入力した内容を出力--></li>
+    </div><!--コンテンツの終わり-->
+    
+    <!--<div class="underspace">
+        <section id="icon">
+             <button onclick="location.href='diary.html'" id="btn1">褒め日記</button>        /ボタンを配置/
+             <button onclick="location.href='record.html'" id="btn2">過去の記録</button>
+             <button onclick="location.href='record.html'" id="btn3">何か</button>
+             <button onclick="location.href='setting.html'" id="btn4">設定</button>
+         </section>
+    </div>
+    -->
+
+    
+
+<script>
+    //おみくじ使いまわし
+(function(){
+            'use strict';
+            let isPlaying = false;
+            let timer;
+            let result = document.getElementById('result');
+            let spbtn = document.getElementById('spbtn');
+            let results = ['人知れず頑張っている人','自信にあふれている人','周りを笑顔にする人','応援したくなる人','自分と仲良くなれそうな人'];
+
+            document.getElementById('btn').addEventListener('click',function() {
+               if (isPlaying)return;
+               isPlaying = true;
+               runslot();
+            });
+
+            document.getElementById('btn').addEventListener('mousedown',function() {
+                this.className = 'pushed';
+            });
+
+            document.getElementById('btn').addEventListener('mouseup',function() {
+                this.className = '';
+            });
+            function runslot(){
+                let resultNo = Math.floor(Math.random()*results.length);
+                result.innerHTML = results[resultNo];
+                timer = setTimeout(function(){
+                runslot()
+                },50);
+            }
+            document.getElementById('spbtn').addEventListener('click',function(){
+                stopSlot(this);
+            });
+            document.getElementById('spbtn').addEventListener('mousedown',function() {
+                this.className = 'push';
+            });
+            document.getElementById('spbtn').addEventListener('mouseup',function() {
+                this.className = '';
+            });
+            function stopSlot(btn){
+                isPlaying = false;
+                spbtn.className = 'spbtn inactive';
+                clearTimeout(timer);
+            }
+        })();
+</script>
+</body>
+</html>
