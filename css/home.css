@@ -1,0 +1,184 @@
+#canvas{
+    background-color: rgba(61, 190, 255, 0.32);
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.topspace {
+	position: fixed;
+    top: 0;
+    left: 0;
+	width: 99.1%;
+	height: 10%;
+    background-color: aliceblue;
+    border-style: solid;
+    z-index: 2;
+}
+
+#date{
+    font-family: Arial, sans-serif; /*フォントの指定*/
+    font-size: 125%;                /*フォントサイズの指定*/
+    margin-top: 3%;
+    position: static;
+}
+
+.content{
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    z-index: 1;
+}
+#illust{
+   
+    width: 30%;
+    height: 30%;
+}
+
+.underspace {
+	position: fixed;
+    bottom: 0;
+    left: 0;
+	width: 99%;
+	height: 10%;
+    background-color: aliceblue;
+    border-style: solid;
+}
+#icon{
+    padding: 5px;
+    display: flex;
+  justify-content: space-evenly;
+}
+/*.shadow{
+    background-color: black;
+    opacity: 0.4;
+    position:fixed;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+*/
+
+button{
+    background-color: rgb(255, 203, 216);
+    text-align: center;
+    width: auto;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.memoForm{
+    position: static;
+    text-align: center;
+    margin: 5%;
+    margin-bottom: 15%;
+    width: 90%;
+    
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    background-color: rgb(255, 255, 255);
+    border-style: solid;
+    z-index: 1;
+}
+  .memoForm input,
+  .memoForm textarea,
+  .memoForm button{
+    margin-bottom: 10px;
+  }
+#memoArea{
+    position: static;
+    text-align: center;
+    margin: 5%;
+
+    background-color: rgb(255, 255, 255);
+    border-style: solid;
+}
+.record{
+    position: absolute;
+    text-align: center;
+    margin-top: 10%;
+    width: 95%;
+    height: 100%;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    background-color: rgb(255, 255, 255);
+    border-style: solid;
+}
+
+.setting{
+    position: absolute;
+    text-align: center;
+    margin-top: 10%;
+    width: 95%;
+    height: 65%;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    background-color: rgb(255, 255, 255);
+    border-style: solid;
+}
+
+#volumeoff{
+    margin-left: 15%;
+margin-right: 5%;
+}
+#volumeon{
+    margin-left: 5%;
+    }
+
+.flex{
+    display: flex;
+}
+
+#btn{
+    margin: 10px auto;
+    width: 150px ;
+    padding: 5px ;
+    border-radius: 15px ;
+    background: #00aaff;
+    box-shadow: 0 4px 0 #0088cc;
+    cursor: pointer;
+}
+#btn:hover{
+    opacity: 0.5;
+}
+#btn.pushed{
+    margin-top: 12px;
+    box-shadow: 0 2px 0 #0088cc;
+    margin-bottom: 8px;
+}
+#spbtn{
+    margin: auto;
+
+    width: 80px;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    color: white;
+    box-shadow: 0 4px 0 #0088cc;
+    background: #00aaff;
+    cursor: pointer;
+}
+#spbtn:hover{
+    opacity: 0.5;
+    
+}
+#spbtn.push{
+    margin-top: 12px;
+    margin-bottom: 13px;
+    box-shadow: 0 2px 0 #0088cc;
+}
+.spbtn.inactive{
+    opacity: 1;
+}
+
+#sendbtn{
+    padding: auto;
+}
