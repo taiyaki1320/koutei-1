@@ -51,7 +51,7 @@ $(document).ready(function(){
 
 	var readMemo = function(){
 		var memoObjs = getStorage(storageKey);
-		if (memoObjs.length == null) return;
+		if (memoObjs == null) return;
 		for (var i = 0; i < memoObjs.length; i ++) {
 			var memoObj = memoObjs[i];
 			var ttl = memoObj.ttl;
