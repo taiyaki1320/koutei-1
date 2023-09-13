@@ -67,7 +67,7 @@ $(document).ready(function(){
 	};
 
 	//ページ読込み時にメモ復帰
-	//0000000000000readMemo();//
+	readMemo();
 
 	//イベントハンドル
 	$("#btnAdd").on('click',function(){
