@@ -13,7 +13,7 @@ $(document).ready(function(){
 	var add = function(){
 		var ttl = $(".memoForm #title").val();
 				bdy = $(".memoForm #body").val();
-		addMemo(ttl,bdy);
+	//	addMemo(ttl,bdy);
 		saveMemo(ttl,bdy);
 		listMemo(ttl,bdy);
 	};
@@ -55,6 +55,9 @@ $(document).ready(function(){
 		};
 		memoArr.push(memoObj);
 		saveStorage(storageKey,memoArr);
+
+		$(".memoForm #title").val('');	//記録を追加する際にフォームを空にする
+		$(".memoForm #body").val('');
 	}
 
 	var resetMemo = function(){
