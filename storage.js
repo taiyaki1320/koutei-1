@@ -15,8 +15,7 @@ $(document).ready(function(){
 				bdy = $(".memoForm #body").val();
 		addMemo(ttl,bdy);
 		saveMemo(ttl,bdy);
-        console.log(ttl);
-        console.log(bdy);
+		listMemo(ttl,bdy);
 	};
 
 	var addMemo = function(ttl,bdy){
@@ -32,6 +31,20 @@ $(document).ready(function(){
 		$(".memoForm #body").val('');
 	}
 
+	var listMemo = function(ttl,bdy){
+		//追加する要素を用意
+	let tag1 = document.createElement("li");
+	tag1.textContent = (ttl + "　" + bdy);
+
+	//追加の基準となる要素を宣言
+	let sample = document.getElementById("memoArea");
+
+	//基準要素の前（中？）に追加
+	let result = sample.appendChild(tag1);
+	
+	console.log(result);
+	}
+	
 	memoArr = [];
 	var storageKey = 'memoObj';
 
@@ -62,7 +75,8 @@ $(document).ready(function(){
 			};
 		memoArr.push(memoObj);
 		saveStorage(storageKey,memoArr);
-			addMemo(ttl,bdy);
+		//	addMemo(ttl,bdy);
+			listMemo(ttl,bdy);
 		}
 	};
 
